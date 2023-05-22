@@ -27,21 +27,25 @@ def validar_numero(text):
             continue
         return valor
 
+def run():
 
-delay_print("Saludos, vamos a jugar a las adivinanzas\nYo escogeré u numero entre 1-20 y tu deberás adivinar cual es")
-random_number= random.randrange(1,20)
+    delay_print("Saludos, vamos a jugar a las adivinanzas\nYo escogeré u numero entre 1-20 y tu deberás adivinar cual es")
+    random_number= random.randrange(1,20)
 
-while True:
-    numero = validar_numero("\nIngresa un numero entre 1-20")
-    if numero < random_number:
-        delay_print(f"El numero a adivinar es mayor a {numero}")
-        time.sleep(1.5)
-        os.system("clear")
-    elif numero > random_number:
-        delay_print(f"El numero a adivinar es menor a {numero}")
-        time.sleep(1.5)
-        os.system("clear")
-    else:
-        delay_print(f"Felicidades! acertaste, el numero era {numero}")
-        time.sleep(1)
-        break
+    while True:
+        numero = validar_numero("\nIngresa un numero entre 1-20")
+        if numero < random_number:
+            delay_print(f"El numero a adivinar es mayor a {numero}")
+            time.sleep(1.5)
+            os.system("clear")
+        elif numero > random_number:
+            delay_print(f"El numero a adivinar es menor a {numero}")
+            time.sleep(1.5)
+            os.system("clear")
+        else:
+            delay_print(f"Felicidades! acertaste, el numero era {numero}\n")
+            time.sleep(1)
+            break
+
+if __name__ == "__main__":
+    run()
